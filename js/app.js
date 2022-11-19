@@ -1,5 +1,6 @@
 `use strict`;
 // query selector is just like a css selector, works the same way
+let goatContainer = document.querySelector(`section`);
 let image1 = document.querySelector(`section img:first-child`);
 let image2 = document.querySelector(`section img:nth-child(2)`);
 let resultsButton = document.getElementById(`results`);
@@ -66,6 +67,7 @@ function renderGoats() {
 //  increment goats .clicks
 // render 2 new goats
 function handleGoatClick(event) {
+  clicks++;
   // the event object knows about the event and the element targeted
 
   // how to increment the correct goat's .clicks
