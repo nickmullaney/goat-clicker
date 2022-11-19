@@ -79,6 +79,10 @@ li {
 }
 
 /* -- button -- */
+
+button{
+  height: fit-content;
+}
 section + div {
   background-color: darkgray;
   color: lightgrey;
@@ -93,7 +97,6 @@ section + div {
   do once the voting cycle ends. Do not demo this unless you do the 
   below 'section + div.clicks-allowed' code as well. The class  
   'clicks-allowed' must be added to the element via the JavaScript. */
-
   pointer-events: none;
 }
 /* Demo stretch goal: */
