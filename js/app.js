@@ -31,14 +31,15 @@ function getRandomIndex() {
 
 // render function: invoke function on page load, I want to load 2 random goats
 function renderGoats() {
-  let firstGoat = goats[getRandomIndex()];
-  let secondGoat = goats[getRandomIndex()];
-
+  
   // This prevents the same images from appearing
   while(index1 === index2){
     index2 = getRandomIndex();
   }
-
+  
+  let firstGoat = goats[getRandomIndex()];
+  let secondGoat = goats[getRandomIndex()];
+  
   // DOM manipulation
   // This replaces the src for the image with the img src from the goat variable
   image1.src = firstGoat.src;
