@@ -22,7 +22,7 @@ function Goat(name, src) {
   this.views = 0;
 }
 
-let goat1 = new Goat(`Timmy`, `imgcruisin-goat.jpg`);
+let goat1 = new Goat(`Timmy`, `img/cruisin-goat.jpg`);
 let goat2 = new Goat(`Tanya`, `img/goat-out-of-hand.jpg`);
 let goat3 = new Goat(`Erica`, `img/sassy-goat.jpg`);
 let goats = [goat1, goat2, goat3];
@@ -134,7 +134,7 @@ function viewResults(event){
         label: '# of Clicks per Goat',//title
         data: goatClicks,//Y axis
         borderWidth: 1,
-        backgroundColor: rgba(157, 157, 157, 0.1)
+        backgroundColor: `#4287f5`
       }]
     },
     options: {
