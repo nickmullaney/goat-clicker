@@ -133,8 +133,8 @@ function viewResults(event){
       datasets: [{
         label: '# of Clicks per Goat',//title
         data: goatClicks,//Y axis
-        borderWidth: 1
-        backgroundColor: rgba(157, 157, 157, 0.1);
+        borderWidth: 1,
+        backgroundColor: rgba(157, 157, 157, 0.1)
       }]
     },
     options: {
