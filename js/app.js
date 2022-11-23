@@ -22,7 +22,7 @@ function Goat(name, src) {
   this.views = 0;
 }
 
-let goat1 = new Goat(`Timmy`, `img/cruisin-goat.jpg`);
+let goat1 = new Goat(`Timmy`, `imgcruisin-goat.jpg`);
 let goat2 = new Goat(`Tanya`, `img/goat-out-of-hand.jpg`);
 let goat3 = new Goat(`Erica`, `img/sassy-goat.jpg`);
 let goats = [goat1, goat2, goat3];
@@ -98,6 +98,7 @@ function handleGoatClick(event) {
   renderGoats();
 }
 
+// When user clicks on viewresults, it shows the info we gathered.
 function viewResults(event){
   let ul = document.querySelector(`ul`);
   // Make one li for each goat inside goats[]
@@ -106,8 +107,46 @@ function viewResults(event){
     li.innerText = `${goats[i].name} was viewed ${goats[i].views} times and was clicked on ${goats[i].clicks} times.`;
     ul.appendChild(li);
   }
+
+  //Chart
+
+  // get my goat names, clicks and views into an array
+  // Think about making this an object
+// the starter code for this chart comes from chartjs.org
+  let goatNames = [];
+  let goatClicks =[];
+  for (let i = 0; i < goats.length; i++){
+    goatNames.push(goats[i].name);
+    goatClicks.push(goats[i].clicks);
+  }
+  console.log(`the goatNames are: ${goatNames}`);
+  console.log(`the goatClicks are: ${goatClicks}`);
+
+
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: goatNames,// X axis
+      datasets: [{
+        label: '# of Clicks per Goat',//title
+        data: goatClicks,//Y axis
+        borderWidth: 1
+        backgroundColor: rgba(157, 157, 157, 0.1);
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
   // Not a great way to remove this item
-  // resultsButton.removeEventListener(`click`, viewResults);
+  resultsButton.removeEventListener(`click`, viewResults);
 }
 
 // On page load
