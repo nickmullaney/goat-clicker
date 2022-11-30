@@ -27,6 +27,16 @@ let goat2 = new Goat(`Tanya`, `img/goat-out-of-hand.jpg`);
 let goat3 = new Goat(`Erica`, `img/sassy-goat.jpg`);
 let goats = [goat1, goat2, goat3];
 
+// ***************************************************
+// load from local storage
+// This helps determine if it's necessary to try and load the data.
+if(localStorage.getItem(`savedGoats`)){
+// step 3 in storage
+let savedGoats = localStorage.getItem(`savedGoats`);
+// Step4 parsing
+goats = JSON.parse(savedGoats);
+}
+
 // get random goat index
 function getRandomIndex() {
   // possible return values: 0, 1, 2
@@ -69,26 +79,15 @@ function renderGoats() {
 function handleGoatClick(event) {
   clicks++;
   // the event object knows about the event and the element targeted
-
-  // how to increment the correct goat's .clicks
-  // Option 1 using For Loop***************************************
-  // if goat[i].alt = event.target.alt, then increment clicks
-  // for(let i = 0; i < goats.length; i++){
-  //   if (goats[i].name == event.target.alt){
-  //     goats[i].clicks++;
-  //   }
-  // }
-  //Option2 **************************
-  //use global index variables
-  // if (goats[index1].name = event.target.alt){
-  //   goats[index1].clicks++;
-  // }
-  // if (goats[index2].name = event.target.alt){
-  //   goats[index2].clicks++;
-  // }
-
   // Option 3, using ID***************************
   goats[event.target.id].clicks++;
+  // Add local storage every time goat is clicked, aka save the clicks
+  // Step 1
+  let stringify =  JSON.stringify(goats);
+  // step 2
+  localStorage.setItem(`savedGoats`,stringify);
+
+
   if (clicks > 10) {
     image1.removeEventListener(`click`, handleGoatClick);
     image2.removeEventListener(`click`, handleGoatClick);
