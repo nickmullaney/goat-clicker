@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   background-color: cornsilk;
   color: saddlebrown;
 }
@@ -22,13 +22,13 @@ main {
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 1;
-  grid-column-end: 3
+  grid-column-end: 3;
 }
 
 h1 {
   font-size: 5rem;
   color: rosybrown;
-  line-height: .8;
+  line-height: 0.8;
   margin: 3rem 0 1rem;
   grid-row-start: 1;
   grid-row-end: 3;
@@ -45,8 +45,8 @@ section {
   grid-column-end: 3;
   padding: 2rem;
   display: flex;
-  justify-content: space-between; 
-  align-items: flex-start; 
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* -- goat images --*/
@@ -75,21 +75,21 @@ ul {
   margin: 1rem;
 }
 li {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 /* -- button -- */
 
-button{
+button {
   height: fit-content;
 }
 section + div {
   background-color: darkgray;
   color: lightgrey;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   width: max-content;
   height: max-content;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 1rem;
 
   /* —— Demo stretch goal —— */
@@ -107,5 +107,5 @@ section + div.clicks-allowed {
   pointer-events: auto;
 }
 section + div.clicks-allowed:hover {
-  background-color: rgb(211, 187, 175)
+  background-color: rgb(211, 187, 175);
 }

@@ -89,7 +89,7 @@ function handleGoatClick(event) {
 
   // Option 3, using ID***************************
   goats[event.target.id].clicks++;
-  if (clicks >10){
+  if (clicks > 10) {
     image1.removeEventListener(`click`, handleGoatClick);
     image2.removeEventListener(`click`, handleGoatClick);
   }
@@ -99,10 +99,10 @@ function handleGoatClick(event) {
 }
 
 // When user clicks on viewresults, it shows the info we gathered.
-function viewResults(event){
+function viewResults(event) {
   let ul = document.querySelector(`ul`);
   // Make one li for each goat inside goats[]
-  for(let i = 0; i < goats.length; i++){
+  for (let i = 0; i < goats.length; i++) {
     let li = document.createElement(`li`);
     li.innerText = `${goats[i].name} was viewed ${goats[i].views} times and was clicked on ${goats[i].clicks} times.`;
     ul.appendChild(li);
@@ -112,10 +112,10 @@ function viewResults(event){
 
   // get my goat names, clicks and views into an array
   // Think about making this an object
-// the starter code for this chart comes from chartjs.org
+  // the starter code for this chart comes from chartjs.org
   let goatNames = [];
-  let goatClicks =[];
-  for (let i = 0; i < goats.length; i++){
+  let goatClicks = [];
+  for (let i = 0; i < goats.length; i++) {
     goatNames.push(goats[i].name);
     goatClicks.push(goats[i].clicks);
   }
